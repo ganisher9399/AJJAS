@@ -9,7 +9,7 @@
                    <li><a href=""><i class="fas fa-sign-in"></i>нопка Submit</a></li>
                </ul>
                <form @submit.prevent="sendMail">
-                   <input type="text" :class="{ border: borderof1  }" placeholder="full name..." v-model="Name">
+                   <input type="text" :class="{ border: borderof1  }" placeholder="Full Name..." v-model="Name">
                             <p :class="{ d_block: borderof1 }">Iltimos ismingizni kiriting..</p>
                    <input type="tel" :class="{ border: borderof2  }" placeholder="+998(88)183-68-68" v-model="tel">
                             <p :class="{ d_block: borderof2 }">Telefon raqamindiz..</p>
