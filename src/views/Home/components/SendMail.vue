@@ -9,9 +9,12 @@
                    <li><a href=""><i class="fas fa-sign-in"></i>нопка Submit</a></li>
                </ul>
                <form @submit.prevent="sendMail">
-                   <input type="text" :class="{ border: borderof1  }" placeholder="Your name..." v-model="Name">
+                   <input type="text" :class="{ border: borderof1  }" placeholder="full name..." v-model="Name">
+                            <p :class="{ d_block: borderof1 }">Iltimos ismingizni kiriting..</p>
                    <input type="tel" :class="{ border: borderof2  }" placeholder="+998(88)183-68-68" v-model="tel">
+                            <p :class="{ d_block: borderof2 }">Telefon raqamindiz..</p>
                    <textarea placeholder="Comment..." :class="{ border: borderof3  }" v-model="Comment"></textarea>
+                            <p :class="{ d_block: borderof3 }">A_G' Izoh qoldiring..</p>
                    <Button type="submit">Sends</Button>
                </form>
            </div>
@@ -29,6 +32,7 @@ export default {
     Title,
     Button,
   },
+
   data(){
     return{
       borderof1: false,
@@ -37,18 +41,24 @@ export default {
       subtitlevido: 'Formni to`g`ri to`ldiring va men siz bilan albatta bog`lanaman ok?',
       title: 'Akhmadov G`anisher contacts',
       Name: '',
-      tel: '',
+      tel: ``,
       Comment: '',
       Tokin: '5247852882:AAH-v3nzD-kFRm1P9M4D2P-iGuMBOrcGfBg',
       Chatid: '-649993032',
-    
+      
     }
   },
+
   methods: {
     async sendMail(){
-      
+        
+        
+        if(this.Name.length == 0){ this.borderof1 = true; } else{ this.borderof1 = false;}
+        if(this.tel.length == 0){ this.borderof2 = true; } else{ this.borderof2 = false;}
+        if(this.Comment.length == 0){ this.borderof3 = true; } else{ this.borderof3 = false;}
 
-        if(this.Name.length > 0 && this.tel.length > 0 && this.Comment){
+
+        if(this.Name.length > 0 && this.tel.length > 0 && this.Comment.length > 0){
 
            const ism = String('Ismi:'+this.Name);
            const tel = String('Tel Raqami:'+this.tel);
@@ -58,7 +68,7 @@ export default {
            this.Name = '';
            this.tel = '';
            this.Comment = '';
-        }
+        }else{ return; }
 
     
         
@@ -108,6 +118,7 @@ export default {
                    border: 1px solid $border_color;
                }
                input{
+                   text-transform: capitalize;
                    width: 100%;
                    height: 50px;
                    padding: 0 15px;
@@ -116,7 +127,23 @@ export default {
                }
                .border{
                    border: 2px solid red;
+                   transition: 1s;
                }
+               p{
+                   color: red;
+                   margin: 0;padding: 0;
+                   width: 100%;
+                   font-size: 14px;
+                   font-family: sans-serif;
+                   font-weight: 500;
+                   display: none;
+                   
+               }
+               .d_block{
+                   display: block;
+                   
+               }
+
            }
            ul{
                li{
