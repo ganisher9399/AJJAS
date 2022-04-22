@@ -15,7 +15,7 @@
                             <p :class="{ d_block: borderof2 }">Telefon raqamindiz..</p>
                    <textarea placeholder="Comment..." :class="{ border: borderof3  }" v-model="Comment"></textarea>
                             <p :class="{ d_block: borderof3 }">A_G' Izoh qoldiring..</p>
-                   <Button type="submit">Sends</Button>
+                   <Button type="submit">Send</Button>
                </form>
            </div>
       </div>
