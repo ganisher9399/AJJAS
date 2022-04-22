@@ -13,6 +13,11 @@ const routes = [
     component: () => import('../views/Blog/index.vue'),
   },
   {
+    path: '/contact',
+    name: 'Contact',
+    component: () => import('../views/contact/index.vue'),
+  },  
+  {
     path: '/post/:postId',
     name: 'Post',
     component: () => import('../views/Blog/components/BlogPost.vue'),

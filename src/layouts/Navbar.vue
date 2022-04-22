@@ -3,7 +3,7 @@
     <div class="container">
         <nav class="navbar">
            <ul class="menu" v-if="!isMobile">
-               <li class="menu-item" v-for="item in menuArray" :key="item.text">
+               <li class="menu-item" v-for="item in menuArray" :key="item.text" @click="topRouter">
                   <a :href="item.link" class="link">{{ item.text }}</a>
                </li>
            </ul>
@@ -77,21 +77,23 @@ export default {
       logoImage: require('../assets/images/logos/logo.png'),  
       menuArray: [
         {
-          text: 'Контирагентам',
-          link: '#'
+          text: 'Home/me',
+          link: '/'
         },
         {
-          text: 'Дизаынерам',
-          link: '#'
+          text: 'About/me',
+          link: '/blog'
         },
         {
-          text: 'Вакансии',
-          link: '#'
+          text: 'contact',
+          link: '/contact'
         },                
       ]
     }
   },
   methods: {
+
+
     checkScreenWidth(){
       const winWidth = window.innerWidth
 

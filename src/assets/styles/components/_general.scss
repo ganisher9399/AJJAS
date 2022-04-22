@@ -3,6 +3,10 @@ body{
     font-size: $font_size;
     font-family: $font_family;
     font-weight: 400;
+
+    &::-webkit-scrollbar{
+        display: none;
+    }
 }
 
 .container{
