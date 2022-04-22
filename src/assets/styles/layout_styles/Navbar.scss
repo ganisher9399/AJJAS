@@ -42,7 +42,11 @@ header{
                         color: $white;
                         font-size: 16px;
                     } 
+                    .routercolor{
+                        color: rgb(13, 13, 63);
+                    }
             }
+          
         } 
 
         .logo{
@@ -129,6 +133,7 @@ header{
                     padding: 15px 0;
                     }
                 }
+         
             }
 
             .block{

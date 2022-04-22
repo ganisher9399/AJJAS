@@ -52,7 +52,7 @@ export default {
         height: 100vh;
         padding: 200px 0;
         color: $white;
-        background: url("https://cdn.shopify.com/s/files/1/0021/6592/files/banner-gold-coral-necklace_1600x.jpg?v=1635487500") no-repeat center / cover;
+        background: url("https://ae04.alicdn.com/kf/HTB1AatdBb1YBuNjSszeq6yblFXaT/The-Vampire-Diaries-Ring-Elena-s-Daylight-Sun-Protection-Ring-Classic-Design-Blue-Stone-Ring-For.jpg_480x480xzq55.jpg") no-repeat center / cover;
         position: relative;
 
         &::before{

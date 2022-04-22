@@ -3,8 +3,8 @@
     <div class="container">
         <nav class="navbar">
            <ul class="menu" v-if="!isMobile">
-               <li class="menu-item" v-for="item in menuArray" :key="item.text" @click="topRouter">
-                  <a :href="item.link" class="link">{{ item.text }}</a>
+               <li class="menu-item " v-for="(item, ind) in menuArray" :key="item.text" >
+                  <a :href="item.link" class="link" :class="{ routercolor: al === ind }" @click="al = ind" >{{ item.text }}</a>
                </li>
            </ul>
 
@@ -27,10 +27,10 @@
            <div class="actions" v-if="!isMobile">
                <div class="search" @click="$emit('openSearchBar')">
                    <i class="fas fa-search"></i>
-                   <span>Поиск</span>
+                   <span>Search</span>
                </div>
                <div class="auth">
-                   <span>Вход/Регистрасия</span>
+                   <span>Login/Register</span>
                </div>
                <div class="act">
                    <i class="fas fa-user"></i>
@@ -43,7 +43,7 @@
         <!-- Mobile Menu -->
         <div :class="['burger-menu', { active: isOpen }]" v-if="isMobile">
           <ul class="mobile-menu">
-            <li class="item" v-for="item in menuArray" :key="item.text">
+            <li class="item " v-for="item in menuArray" :key="item.text" >
               <a :href="item.link">{{ item.text }}</a>
             </li>
           </ul>
@@ -72,6 +72,7 @@
 export default {
   data() {
     return {
+      al: 0,
       isMobile: false,
       isOpen: false,
       logoImage: require('../assets/images/logos/logo.png'),  
@@ -92,8 +93,7 @@ export default {
     }
   },
   methods: {
-
-
+   
     checkScreenWidth(){
       const winWidth = window.innerWidth
 
