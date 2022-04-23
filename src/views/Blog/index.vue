@@ -1,7 +1,10 @@
 <template>
-   <section class="blogs">
+<div>
+    <SearchBar :isActive="isSearchBarActive" @closeSearchBar="isSearchBarActive = false" />
+    <Navbar @openSearchBar="isSearchBarActive = true"/>
+     <section class="blogs">
      <div class="block">
-           <Title :title='title' :sub='subtitle'/>
+        <Title :title='title' :sub='subtitle'/>
      </div>
      <div class="container wrapper">
         <BlogCard 
@@ -14,16 +17,21 @@
         />
      </div>
    </section>
+</div>
 </template>
 
 
 <script>
+import SearchBar from '../../layouts/SearchBar.vue'
+import Navbar from '../../layouts/Navbar.vue'
 import Title from '@/layouts/Title.vue'
 import BlogCard from '@/layouts/BlogCard.vue'
 import BlogPosts from '@/blog_posts.js'
 
 export default {
   components: {
+    Navbar,
+    SearchBar,
     Title,
     BlogCard,
   },
@@ -32,6 +40,7 @@ export default {
       title: 'JEWELLERY BLOG',
       subtitle: 'Articles by Australian designer Simone Walsh',
       blockpost: BlogPosts,
+      isSearchBarActive: false,
     }
   } 
 }
@@ -52,7 +61,7 @@ export default {
         height: 100vh;
         padding: 200px 0;
         color: $white;
-        background: url("https://ae04.alicdn.com/kf/HTB1AatdBb1YBuNjSszeq6yblFXaT/The-Vampire-Diaries-Ring-Elena-s-Daylight-Sun-Protection-Ring-Classic-Design-Blue-Stone-Ring-For.jpg_480x480xzq55.jpg") no-repeat center / cover;
+        background: url("https://ae01.alicdn.com/kf/HTB1LStiaHWi31JjSZJiq6zRspXaU/2017.jpg") no-repeat center / cover;
         position: relative;
 
         &::before{
