@@ -31,7 +31,7 @@
                                 <input type="password" id="pa">
                             </div>  
                             
-                            <button type="submit">Kirish</button>  
+                            <button type="submit" @click="$router.push({name: 'Home'})">Kirish</button>  
                         </div>   
 
                     </form>

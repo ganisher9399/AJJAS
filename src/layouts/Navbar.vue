@@ -4,7 +4,7 @@
         <nav class="navbar">
 
            <ul class="menu" v-if="!isMobile">
-               <li class="menu-item " v-for="(item, ind) in menuArray" :key="item.text" @click="alTop = ind" >
+               <li class="menu-item " v-for="(item, ind) in menuArray" :key="item.text" @click="foo(ind)" >
                   <a :href="item.link" class="link" >{{ item.text }}</a>
                </li>
            </ul>
@@ -95,7 +95,13 @@ export default {
   },
   methods: {
     foo(a){
-
+      if(a = 0){
+        this.router.push({name: 'Home'})
+      }else if(a = 1){
+        this.router.push({name: 'Blog'})
+      }else{
+        this.router.push({name: 'Contact'})
+      }
     },
   
     checkScreenWidth(){
