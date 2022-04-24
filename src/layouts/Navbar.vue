@@ -44,7 +44,7 @@
         <!-- Mobile Menu -->
         <div :class="['burger-menu', { active: isOpen }]" v-if="isMobile">
           <ul class="mobile-menu">
-            <li class="item " v-for="item in menuArray" :key="item.text"  @click="alTop = ind">
+            <li class="item " v-for="item in menuArray" :key="item.text" @click="foo(ind)">
               <a :href="item.link">{{ item.text }}</a>
             </li>
           </ul>
