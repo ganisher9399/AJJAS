@@ -4,8 +4,8 @@
         <nav class="navbar">
 
            <ul class="menu" v-if="!isMobile">
-               <li class="menu-item " v-for="(item, ind) in menuArray" :key="item.text" @click="foo(ind)" >
-                  <a :href="item.link" class="link" >{{ item.text }}</a>
+               <li class="menu-item " v-for="(item, ind) in menuArray" :key="item.text"  >
+                  <a :href="item.link" class="link" @click="foo(ind)" >{{ item.text }}</a>
                </li>
            </ul>
 
@@ -44,8 +44,8 @@
         <!-- Mobile Menu -->
         <div :class="['burger-menu', { active: isOpen }]" v-if="isMobile">
           <ul class="mobile-menu">
-            <li class="item " v-for="item in menuArray" :key="item.text" @click="foo(ind)">
-              <a :href="item.link">{{ item.text }}</a>
+            <li class="item " v-for="item in menuArray" :key="item.text" >
+              <a :href="item.link" @click="foo(ind)">{{ item.text }}</a>
             </li>
           </ul>
 
